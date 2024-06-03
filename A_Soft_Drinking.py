@@ -1,17 +1,19 @@
-n, k, l, c, d, p, nl, np = map(int, input().split())
+class Solution:
+    def floorSqrt(self, x,n):
+        if x < 2:
+            return x
+        best  = -1
+        left, right = 1, x
+        while left < right:
+            mid = left + (right - left) // 2
+            if mid ** n == x:
+                best = mid
+                left = mid + 1
+            else:
+                right = mid
 
-drink = k * l
-lime = c * d
-salt = p
-
-dp = nl
-lp = 1
-sp = np
-
-mxdrink = drink // dp
-mxlime = lime // lp
-mxsalt = salt // sp
-
-res = min(mxdrink, mxlime, mxsalt) // n
-
-print(res)
+        return best
+    
+sol = Solution()
+x , n = map(int , input().split())
+print(sol.floorSqrt(x,n))
