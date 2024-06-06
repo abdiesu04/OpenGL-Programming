@@ -11,7 +11,7 @@ def transpose(mat):
     t = [[0 for _ in range(n)] for _ in range(n)]
     for i in range(n):
         for j in range(n):
-            t[j][i] = mat[i][j]
+            t[i][j] = mat[j][i]
     return t
 
 def sol():
@@ -21,7 +21,7 @@ def sol():
 
     if n == m:
         stt = set(tuple(sorted(row)) for row in grid1)
-        print(stt)
+        # print(stt)
         for row in grid2:
             if tuple(sorted(row)) not in stt:
                 print("NO")
@@ -50,3 +50,5 @@ def sol():
 t = int(input())
 for _ in range(t):
     sol()
+
+
